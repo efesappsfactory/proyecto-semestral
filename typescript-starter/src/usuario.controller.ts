@@ -2,7 +2,7 @@ import {Body, Controller, Get, HttpCode, Post, ReflectMetadata, Req, Res, UseGua
 import Status = jest.Status;
 import {UsuarioService} from "./usuario.service";
 import {UsuarioPipe} from "./pipes/usuario.pipe";
-import {USUARIO_SCHEMA} from "./usuario/usuario.schema";
+import {USUARIO_SCHEMA} from "./cliente/cliente.schema";
 import {CrearUsuarioGuard} from "./guards/crear-usuario.guard";
 
 // decorator
