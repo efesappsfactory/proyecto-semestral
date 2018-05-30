@@ -1,5 +1,4 @@
 import {Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn} from "typeorm";
-import {ClienteEntity} from "../cliente/cliente.entity";
 import {RestauranteEntity} from "../restaurante/restaurante.entity";
 import {PlatoEntity} from "../../dist/plato/plato.entity";
 import {ComboEntity} from "../../dist/combo/combo.entity";

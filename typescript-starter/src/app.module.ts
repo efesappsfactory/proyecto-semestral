@@ -8,27 +8,37 @@ import {LogMiddleware} from './log.middleware';
 
 import {TypeOrmModule} from '@nestjs/typeorm';
 import {ClienteEntity} from "./cliente/cliente.entity";
-import {FotoEntity} from "./foto/foto.entity";
+import {OrdenEntity} from "./orden/orden.entity";
+import {RestauranteEntity} from "./restaurante/restaurante.entity";
+import {MenuEntity} from "../dist/menu/menu.entity";
+import {PlatoEntity} from "./plato/plato.entity";
+import {ComboEntity} from "./combo/combo.entity";
+import {BebidaEntity} from "./bebida/bebida.entity";
 
 @Module({
     imports: [
         TypeOrmModule.forRoot({
             type: 'mysql',
-            host: 'web2018agr2.mysql.database.azure.com',
+            host: 'dbserver-proyecto-appweb.mysql.database.azure.com',
             port: 3306,
-            username: 'profesor@web2018agr2',
-            password: 'Javascript1',
-            database: 'web',
+            username: 'myadmin@dbserver-proyecto-appweb',
+            password: 'ei8%uC#\\y6PfDbl',
+            database: 'restauranteGS',
             entities: [
                 __dirname +
                 '/../**/*.entity{.ts,.js}'
             ],
             synchronize: true,
-            ssl: true
+            ssl: false
         }),
         TypeOrmModule.forFeature([
             ClienteEntity,
-            FotoEntity
+            OrdenEntity,
+            RestauranteEntity,
+            MenuEntity,
+            PlatoEntity,
+            ComboEntity,
+            BebidaEntity
         ])
     ],
     controllers: [
