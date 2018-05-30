@@ -1,21 +1,24 @@
 import {Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn} from "typeorm";
 import {ClienteEntity} from "../cliente/cliente.entity";
-import {BebidaEntity} from "../../dist/bebida/bebida.entity";
+import {RestauranteEntity} from "../restaurante/restaurante.entity";
 import {PlatoEntity} from "../../dist/plato/plato.entity";
 import {ComboEntity} from "../../dist/combo/combo.entity";
+import {BebidaEntity} from "../../dist/bebida/bebida.entity";
 
-
-@Entity('orden')
-export class OrdenEntity {
+@Entity('menu')
+export class MenuEntity {
 
     @PrimaryGeneratedColumn()
-    idOrden: number;
+    idMenu: number;
+
+    @Column({length: 50})
+    codigoMenu: string;
 
     @ManyToOne(
-        type => ClienteEntity,
-        clienteEntity => clienteEntity.orden)
+        type => RestauranteEntity,
+        restauranteEntity => restauranteEntity.menu)
 
-    cliente: ClienteEntity;
+    restaurante: RestauranteEntity;
 
     @OneToMany(
         type => PlatoEntity,
@@ -34,4 +37,5 @@ export class OrdenEntity {
         comboEntity => comboEntity.menu)
 
     combo: ComboEntity[];
+
 }

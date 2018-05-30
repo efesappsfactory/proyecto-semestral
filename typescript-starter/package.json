@@ -24,14 +24,16 @@
     "@nestjs/microservices": "^5.0.0",
     "@nestjs/testing": "^5.0.0",
     "@nestjs/websockets": "^5.0.0",
+    "mysql": "^2.15.0",
     "reflect-metadata": "^0.1.12",
     "rxjs": "^6.0.0",
+    "typeorm": "^0.2.6",
     "typescript": "^2.8.0"
   },
   "devDependencies": {
     "@types/express": "^4.0.39",
     "@types/jest": "^21.1.8",
-    "@types/node": "^9.3.0",
+    "@types/node": "^9.6.19",
     "@types/supertest": "^2.0.4",
     "jest": "^21.2.1",
     "nodemon": "^1.14.1",

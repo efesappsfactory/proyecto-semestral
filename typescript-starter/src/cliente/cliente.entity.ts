@@ -1,19 +1,21 @@
 import {Column, Entity, OneToMany, PrimaryGeneratedColumn} from "typeorm";
-import {FotoEntity} from "../foto/foto.entity";
+import {OrdenEntity} from "../orden/orden.entity";
 
-@Entity('web_eguezv_usuario')
+@Entity('cliente')
 export class ClienteEntity {
 
     @PrimaryGeneratedColumn()
-    id: number;
+    idCliente: number;
 
     @Column({length: 50})
-    nombre: string;
+    nombreCliente: string;
+
+    @Column({length: 50})
+    emailCliente: string;
 
     @OneToMany(
-        type => FotoEntity,
-        fotoEntity => fotoEntity.usuario)
-    fotos: FotoEntity[];
+        type => OrdenEntity,
+        ordenEntity => ordenEntity.cliente)
 
-
+    orden: OrdenEntity[];
 }
