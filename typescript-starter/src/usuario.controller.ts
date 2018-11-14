@@ -1,5 +1,4 @@
 import {Body, Controller, Get, HttpCode, Post, ReflectMetadata, Req, Res, UseGuards} from "@nestjs/common";
-import Status = jest.Status;
 import {UsuarioService} from "./usuario.service";
 import {UsuarioPipe} from "./pipes/usuario.pipe";
 import {USUARIO_SCHEMA} from "./cliente/cliente.schema";
@@ -25,8 +24,8 @@ export class UsuarioController {
     @HttpCode(202)
     @Get('mostrar')
     @ReflectMetadata('permisos', {
-        permisos:'publico',
-        roles:[
+        permisos: 'publico',
+        roles: [
             'usuario',
             'administrador'
         ]

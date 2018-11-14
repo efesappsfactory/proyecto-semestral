@@ -1,6 +1,7 @@
 import {Column, Entity, OneToMany, PrimaryGeneratedColumn} from "typeorm";
 import {OrdenEntity} from "../orden/orden.entity";
 
+
 @Entity('cliente')
 export class ClienteEntity {
 
